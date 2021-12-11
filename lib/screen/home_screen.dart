@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wood_fed_oficial/models/project_model.dart';
 import 'package:wood_fed_oficial/screen/add_screen.dart';
 import 'package:http/http.dart' as http;
+import 'package:wood_fed_oficial/screen/show_screen.dart';
 //import 'package:wood_fed_oficial/screen/show_screen.dart';
 
 class HomePage extends StatelessWidget {
@@ -46,6 +47,14 @@ class HomePage extends StatelessWidget {
                       title: Text(project.name),
                       subtitle: Text(project.farm),
                       //tileColor: Colors.red[50],
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ShowPage(
+                                      project: projects[index],
+                                    )));
+                      },
                     ),
                     Divider(),
                   ],
