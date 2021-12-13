@@ -47,11 +47,13 @@ class LoginPage extends StatelessWidget {
                 height: 25,
               ),
               TextField(
+                  obscureText: true,
                   decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Contraseña',
-                prefixIcon: Icon(Icons.vpn_key_rounded),
-              )),
+                    border: OutlineInputBorder(),
+                    labelText: 'Contraseña',
+                    prefixIcon: Icon(Icons.vpn_key_rounded),
+                    hintText: 'Contraseña',
+                  )),
               SizedBox(
                 height: 50,
               ),
