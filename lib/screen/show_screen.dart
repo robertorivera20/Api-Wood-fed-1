@@ -124,8 +124,10 @@ class ShowPage extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, top: 5),
+                                padding: const EdgeInsets.only(
+                                  left: 10,
+                                  top: 5,
+                                ),
                                 child: Column(
                                   children: <Widget>[
                                     Row(
@@ -319,7 +321,6 @@ class ShowPage extends StatelessWidget {
         child: Row(
           children: <Widget>[
             RichText(
-              textAlign: TextAlign.left,
               text: TextSpan(
                 text: project.owner.toUpperCase(), //objeto
                 style: TextStyle(

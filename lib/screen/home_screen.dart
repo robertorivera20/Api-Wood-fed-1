@@ -80,7 +80,7 @@ class HomePage extends StatelessWidget {
   }
 
   Future<List<Project>> getInfo() async {
-    final url = Uri.parse('https://f6f6-190-61-46-2.ngrok.io/projects/');
+    final url = Uri.parse('https://eb10-190-61-46-2.ngrok.io/projects/');
     final response = await http.get(url);
     print(response);
     if (response.statusCode == 200) {

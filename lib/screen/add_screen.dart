@@ -58,16 +58,29 @@ class MapPage extends StatelessWidget {
               ),
               SizedBox(height: 15.0),
               ElevatedButton(
-                  onPressed: () async {
-                    final data = await postInfo(project.toJson());
-                    print(data);
-                    if (data != null) {
-                      print('enviado');
-                    } else {
-                      print('problemas');
-                    }
-                  },
-                  child: Text('ENVIAR'))
+                onPressed: () async {
+                  final data = await postInfo(project.toJson());
+                  print(data);
+                  if (data != null) {
+                    print('enviado');
+
+                    showDialog(
+                        context: context,
+                        builder: (contex) => AlertDialog(
+                              title: Text('Enviado'),
+                              content: Text(
+                                  'El nuevo proyecto ha sido guardado con exito'),
+                            ));
+                  } else {
+                    print('problemas');
+                  }
+                },
+                child: Text('ENVIAR'),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.red),
+                  elevation: MaterialStateProperty.all(5.0),
+                ),
+              )
             ],
           ),
         ),
@@ -76,7 +89,7 @@ class MapPage extends StatelessWidget {
   }
 
   Future<Project?> postInfo(Map json) async {
-    final url = Uri.parse('https://f6f6-190-61-46-2.ngrok.io/projects/');
+    final url = Uri.parse('https://eb10-190-61-46-2.ngrok.io/projects/');
     final response = await http.post(url, body: json);
     print(response.body);
     if (response.statusCode == 201) {

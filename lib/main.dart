@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wood_fed_oficial/screen/home_screen.dart';
 import 'package:wood_fed_oficial/screen/add_screen.dart';
+import 'package:wood_fed_oficial/screen/login_screen.dart';
 import 'package:wood_fed_oficial/screen/maps_screen.dart';
 //import 'package:wood_fed_oficial/screen/show_screen.dart';
 
@@ -12,8 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Poyecto Wood Fed',
-      initialRoute: 'home',
+      initialRoute: 'login',
       routes: {
+        'login': (_) => LoginPage(),
         'home': (_) => HomePage(),
         'map': (_) => MapPage(),
         'maps': (_) => MapsPage(),
